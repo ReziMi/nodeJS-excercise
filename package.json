@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server2.js"
+    "start": "nodemon pathDemo.js"
   },
   "author": "Rezi Mikadze",
   "license": "ISC",
