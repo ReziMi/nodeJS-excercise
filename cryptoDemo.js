@@ -18,10 +18,14 @@ const iv = crypto.randomBytes(16);
 
 
 const cipher = crypto.createCipheriv(algorithm, key, iv);
-
 let encrypted = cipher.update('Hello, World!', 'utf-8', 'hex');
 encrypted += cipher.final('hex');
+// console.log(`Encrypted: ${encrypted}`);
 
-console.log(`Encrypted: ${encrypted}`);
+const decipher = crypto.createDecipheriv(algorithm, key, iv);
+let decrypted = decipher.update(encrypted, 'hex', 'utf8');
+decrypted += decipher.final('utf8');
+
+console.log(`Decrypted: ${decrypted}`);
 
 
